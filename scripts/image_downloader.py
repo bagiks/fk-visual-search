@@ -51,8 +51,8 @@ class ParallelImageDownloader(object):
         return errors
 
 if __name__ == "__main__":
-    url_file_path = "/data/street2shop/photos/photos.txt"
-    dst_dir = "/data/street2shop/images/"
+    url_file_path = "../data/street2shop/photos/photos.txt"
+    dst_dir = "../data/street2shop/images/"
     images_downloaded = os.listdir(dst_dir)
     ids_downloaded = set([ x.split(".")[0] for x in images_downloaded])
     with open(url_file_path,'r') as urlFile:
@@ -61,13 +61,14 @@ if __name__ == "__main__":
         lines = [ x.split(",")[:2] for x in lines]
     url_objects = {}
     for line in lines:
+        print line
         img_id,url = line
         img_id = str(int(img_id))
         if img_id not in ids_downloaded:
             url_objects[img_id] = URLObject(img_id,url) # Done to remove duplicates
     url_objects = url_objects.values()
     print("Commencing downloads for "+str(len(url_objects))+ " urls")
-    downloader = ParallelImageDownloader(25,dst_dir)
+    downloader = ParallelImageDownloader(16,dst_dir)
     errors = downloader.download_batch(url_objects)
     with open("/tmp/errors.pkl","wb") as pklFile:
         pickle.dump(errors,pklFile)

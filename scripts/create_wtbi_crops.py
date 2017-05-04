@@ -5,7 +5,7 @@ import cv2
 
 __author__ = 'ananya.h'
 
-base_dir = "/data/street2shop"
+base_dir = "../data/street2shop"
 meta_dir = os.path.join(base_dir, "meta", "json")
 structured_dir = os.path.join(base_dir, "structured_images")
 query_files = glob.glob(meta_dir + "/*_pairs_*.json")

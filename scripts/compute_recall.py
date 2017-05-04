@@ -70,7 +70,8 @@ def compute_recall(vertical, path_to_nn_lmdb, k_s=[1, 3, 5, 10, 20]):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if len(args) != 2:
-        print("Usage is python compute_recall.py <vertical> <path_to_nn_lmdb>")
-        sys.exit(1)
-    compute_recall(args[0], args[1])
+    # if len(args) != 2:
+    #     print("Usage is python compute_recall.py <vertical> <path_to_nn_lmdb>")
+    #     sys.exit(1)
+    vertial = 'bags'
+    compute_recall(vertial, args[1])

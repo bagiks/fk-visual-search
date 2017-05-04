@@ -8,7 +8,7 @@ __author__ = 'ananya.h'
 
 
 def sample(verticals, output_path, train=True):
-    base_dir = "/data/street2shop"
+    base_dir = "../data/street2shop"
     meta_dir = os.path.join(base_dir, "meta", "json")
     base_image_dir = os.path.join(base_dir, "structured_images")
     number_of_n = 100
@@ -16,8 +16,8 @@ def sample(verticals, output_path, train=True):
     for vertical in verticals:
         filename = prefix + "_pairs_" + vertical + ".json"
         retrieval_path = os.path.join(meta_dir, "retrieval_" + vertical + ".json")
-        image_dir = os.path.join(base_image_dir, vertical + "_256")
-        query_dir = os.path.join(base_image_dir, "wtbi_" + vertical + "_query_crop_256")
+        image_dir = os.path.join(base_image_dir, vertical)
+        query_dir = os.path.join(base_image_dir, "wtbi_" + vertical + "_query_crop")
         with open(os.path.join(meta_dir, filename)) as jsonFile:
             pairs = json.load(jsonFile)
         photo_to_product_map = {}
@@ -55,3 +55,8 @@ def sample(verticals, output_path, train=True):
                              os.path.join(image_dir, x[2] + ".jpg"), x[3]] for x in triplets]
                     writer.writerows(triplets)
                     triplets = []
+
+if __name__ == "__main__":
+    veritcals = ['bags','belts','dresses']
+    ouput_path = '../data/street2shop/triplet_files/test_dataset'
+    sample(veritcals,ouput_path,False)

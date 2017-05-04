@@ -12,7 +12,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to train q file>"
+    source: "../data/street2shop/triplet_files/train_dataset"
     batch_size: 20
   }
 }
@@ -29,7 +29,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to test q file>"
+    source: "../data/street2shop/triplet_files/test_dataset"
     batch_size: 20
   }
 }
