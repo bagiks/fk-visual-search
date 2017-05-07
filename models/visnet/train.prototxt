@@ -12,7 +12,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "../data/street2shop/triplet_files/train_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset"
     batch_size: 20
   }
 }
@@ -29,7 +29,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "../data/street2shop/triplet_files/test_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset"
     batch_size: 20
   }
 }
@@ -69,7 +69,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to train p file>"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset"
     batch_size: 20
   }
 }
@@ -86,7 +86,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to test p file>"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset"
     batch_size: 20
   }
 }
@@ -127,7 +127,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to train n file>"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset"
     batch_size: 20
   }
 }
@@ -144,7 +144,7 @@ layer {
     crop_size: 224
   }
   image_data_param {
-    source: "<path to test n file>"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset"
     batch_size: 20
   }
 }

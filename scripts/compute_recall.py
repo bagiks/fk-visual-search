@@ -74,4 +74,5 @@ if __name__ == "__main__":
     #     print("Usage is python compute_recall.py <vertical> <path_to_nn_lmdb>")
     #     sys.exit(1)
     vertial = 'bags'
+
     compute_recall(vertial, args[1])

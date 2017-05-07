@@ -5,7 +5,7 @@ import cv2
 
 __author__ = 'ananya.h'
 
-base_dir = "../data/street2shop"
+base_dir = "/home/ubuntu/fk-visual-search/data/street2shop"
 meta_dir = os.path.join(base_dir, "meta", "json")
 structured_dir = os.path.join(base_dir, "structured_images")
 query_files = glob.glob(meta_dir + "/*_pairs_*.json")
@@ -25,6 +25,7 @@ for path in query_files:
         query_path = os.path.join(query_dir, str(query_id)+".jpg")
         if not os.path.exists(query_path):
             continue
+        print query_path
         img = cv2.imread(query_path, cv2.IMREAD_COLOR)
         x, w, y, h = bbox["left"], bbox["width"], bbox["top"], bbox["height"]
         crop_img = img[y:y+h, x:x+w]

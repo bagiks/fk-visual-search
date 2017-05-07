@@ -13,5 +13,5 @@ snapshot_format: 0
 snapshot_prefix: "snapshots/visnet-s2s/"
 solver_mode: GPU
 test_compute_loss: true
-net: "models/visnet/train.prototxt"
+net: "/home/ubuntu/fk-visual-search/models/visnet/train.prototxt"
 average_loss: 100

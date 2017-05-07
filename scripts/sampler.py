@@ -8,7 +8,7 @@ __author__ = 'ananya.h'
 
 
 def sample(verticals, output_path, train=True):
-    base_dir = "../data/street2shop"
+    base_dir = "/home/ubuntu/fk-visual-search/data/street2shop"
     meta_dir = os.path.join(base_dir, "meta", "json")
     base_image_dir = os.path.join(base_dir, "structured_images")
     number_of_n = 100
@@ -50,13 +50,14 @@ def sample(verticals, output_path, train=True):
                         n_id = str(n)
                         triplets.append([q_id, p_id, n_id, vertical])
                 with open(output_path, "ab") as csvFile:
-                    writer = csv.writer(csvFile)
-                    triplets = [[os.path.join(query_dir, x[0] + ".jpg"), os.path.join(image_dir, x[1] + ".jpg"),
-                             os.path.join(image_dir, x[2] + ".jpg"), x[3]] for x in triplets]
-                    writer.writerows(triplets)
-                    triplets = []
+                    if (os.path.isfile(os.path.join(query_dir, x[0] + ".jpg"))):
+                        writer = csv.writer(csvFile)
+                        triplets = [[os.path.join(query_dir, x[0] + ".jpg"), os.path.join(image_dir, x[1] + ".jpg"),
+                                 os.path.join(image_dir, x[2] + ".jpg"), x[3]] for x in triplets]
+                        writer.writerows(triplets)
+                        triplets = []
 
 if __name__ == "__main__":
     veritcals = ['bags','belts','dresses']
-    ouput_path = '../data/street2shop/triplet_files/test_dataset'
-    sample(veritcals,ouput_path,False)
+    ouput_path = '/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset'
+    sample(veritcals,ouput_path,True)
