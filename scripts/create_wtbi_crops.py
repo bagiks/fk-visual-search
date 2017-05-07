@@ -27,6 +27,6 @@ for path in query_files:
             continue
         print query_path
         img = cv2.imread(query_path, cv2.IMREAD_COLOR)
-        x, w, y, h = bbox["left"], bbox["width"], bbox["top"], bbox["height"]
+        x, w, y, h = int(bbox["left"]), int(bbox["width"]), int(bbox["top"]), int(bbox["height"])
         crop_img = img[y:y+h, x:x+w]
         cv2.imwrite(os.path.join(wtbi_crop_dir, str(query_id)+".jpg"), crop_img)

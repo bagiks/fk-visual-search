@@ -12,5 +12,5 @@ snapshot: 7121
 snapshot_prefix: "snapshots/visnet-alexnet-s2s/"
 solver_mode: GPU
 test_compute_loss: true
-net: "models/visnet-alexnet/train.prototxt"
+net: "/home/ubuntu/fk-visual-search/models/visnet-alexnet/train.prototxt"
 average_loss: 100
