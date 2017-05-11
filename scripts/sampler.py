@@ -57,8 +57,9 @@ def sample(verticals, output_path, train=True):
                     for x in triplets:
                         if (os.path.isfile(os.path.join(query_dir, x[0] + ".jpg"))) and (os.path.isfile(os.path.join(image_dir, x[1] + ".jpg")))\
                                 and (os.path.isfile(os.path.join(image_dir, x[2] + ".jpg"))):
-                            a = os.path.join(image_dir, x[1] + ".jpg") + " " + x[3]
-                            tmp_triplets.append([a])
+                            a = os.path.join(image_dir, x[2] + ".jpg") + " 0"
+                            if [a] not in tmp_triplets:
+                                tmp_triplets.append([a])
                     # triplets = [[os.path.join(query_dir, x[0] + ".jpg"), os.path.join(image_dir, x[1] + ".jpg"),
                     #          os.path.join(image_dir, x[2] + ".jpg"), x[3]] for x in triplets]
                     if (len(tmp_triplets) >0):
@@ -67,5 +68,5 @@ def sample(verticals, output_path, train=True):
 
 if __name__ == "__main__":
     veritcals = ['bags','belts','dresses']
-    ouput_path = '/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset'
-    sample(veritcals,ouput_path,False)
+    ouput_path = '/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train2_dataset'
+    sample(veritcals,ouput_path,True)

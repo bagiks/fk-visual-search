@@ -12,7 +12,7 @@ layer {
     crop_size: 227
   }
   image_data_param {
-    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train2_dataset"
     batch_size: 130
   }
 }
@@ -29,7 +29,7 @@ layer {
     crop_size: 227
   }
   image_data_param {
-    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test2_dataset"
     batch_size: 100
   }
 }
@@ -124,7 +124,7 @@ layer {
     crop_size: 227
   }
   image_data_param {
-    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/train1_dataset"
     batch_size: 130
   }
 }
@@ -141,7 +141,7 @@ layer {
     crop_size: 227
   }
   image_data_param {
-    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test_dataset"
+    source: "/home/ubuntu/fk-visual-search/data/street2shop/triplet_files/test1_dataset"
     batch_size: 100
   }
 }
